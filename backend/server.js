@@ -18,7 +18,6 @@ app.use(cors({
 }));
 app.use(express.json({ limit: '10mb' })); // built-in body parser (supports large base64 images)
 
-<<<<<<< HEAD
 if (process.env.NODE_ENV === 'production') {
   // app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
@@ -26,9 +25,6 @@ if (process.env.NODE_ENV === 'production') {
   //   res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'));
   // });
 }
-=======
-
->>>>>>> 0392d1e5133353e609806934ea105e35509c59fe
 
 app.get('/', (req, res) => {
   res.send('Backend is running 🚀');

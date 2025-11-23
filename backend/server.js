@@ -11,11 +11,11 @@ app.use(cors());
 app.use(express.json({ limit: '10mb' })); // built-in body parser (supports large base64 images)
 
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../frontend/dist')));
+  // app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'));
-  });
+  // app.get('*', (req, res) => {
+  //   res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'));
+  // });
 }
 
 

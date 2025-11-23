@@ -5,11 +5,7 @@
   "scripts": {
     "dev": "nodemon server.js",
     "seed": "node seed.js",
-     "install-client": "cd frontend && npm install",
-    "build-client": "cd frontend && npm run build",
-    "postinstall": "npm run install-client",
-    "build": "npm run build-client",
-    "start": "cd backend && npm install --production && node index.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",

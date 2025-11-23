@@ -5,6 +5,7 @@ const path = require('path');
 const express = require('express');
 const cors = require('cors');
 const connectDB = require('./config/db');
+import { API_BASE_URL } from '../config/api';
 
 const app = express();
 app.use(cors({
@@ -31,6 +32,11 @@ if (process.env.NODE_ENV === 'production') {
 
 app.get('/', (req, res) => {
   res.send('Backend is running 🚀');
+});
+
+
+export const api = axios.create({
+  baseURL: API_BASE_URL,
 });
 
 

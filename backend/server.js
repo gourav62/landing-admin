@@ -7,7 +7,14 @@ const cors = require('cors');
 const connectDB = require('./config/db');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: [
+    'https://landing-admin-umber.vercel.app', 
+    'http://localhost:5173'                   
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  credentials: true,
+}));
 app.use(express.json({ limit: '10mb' })); // built-in body parser (supports large base64 images)
 
 if (process.env.NODE_ENV === 'production') {
@@ -17,6 +24,10 @@ if (process.env.NODE_ENV === 'production') {
   //   res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'));
   // });
 }
+
+app.get('/', (req, res) => {
+  res.send('Backend is running 🚀');
+});
 
 
 const PORT = process.env.PORT || 5000;
